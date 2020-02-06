@@ -33,9 +33,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Future
 ```
-count all days without alcohol
-count all days with alcohol
-change color for ok and ko days
-add parametr -h for help
+- [ ] count all days without alcohol
+- [ ] count all days with alcohol
+- [x] change color for ok and ko days
+- [x] add parametr -h for help
 ```
 
