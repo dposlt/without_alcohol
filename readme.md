@@ -37,5 +37,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [ ] count all days with alcohol
 - [x] change color for ok and ko days
 - [x] add parametr -h for help
+- [ ] add db method
 ```
 
