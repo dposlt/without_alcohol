@@ -49,16 +49,16 @@ def getDate():
 
     return today
 
-
+db = 'testdata.txt'
 def writeToDb(result, today):
     # needed small database for previous days
-    with open('data.txt','a+') as database:
+    with open(db,'a+') as database:
         database.writelines(f'\n{today} > {Fore.RED}{result}{Style.RESET_ALL}')
 
 
 # main
 def main():
-    with open('data.txt','r') as database:
+    with open(db,'r') as database:
         f = database.readlines()
         return f
 
