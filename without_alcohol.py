@@ -14,8 +14,8 @@ init()
 
 # get restult
 def getResult():
-    y = 'OK'
-    n = 'KO'
+    y = f'{Fore.GREEN} OK'
+    n = f'{Fore.RED} KO'
     help = 'add argument "-y" for day without alcoho \n add argument "-n" for day with alcohol'
 
     countArgs = len(sys.argv)
@@ -53,7 +53,7 @@ db = 'testdata.txt'
 def writeToDb(result, today):
     # needed small database for previous days
     with open(db,'a+') as database:
-        database.writelines(f'\n{today} > {Fore.RED}{result}{Style.RESET_ALL}')
+        database.writelines(f'\n{today} > {result}{Style.RESET_ALL}')
 
 
 # main
