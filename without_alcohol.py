@@ -55,19 +55,35 @@ def writeToDb(result, today):
     with open(db,'a+') as database:
         database.writelines(f'\n{today} > {result}{Style.RESET_ALL}')
 
+#count
+def count():
+    countOK = 0
+    countKO = 0
+    with open(db,'r') as database:
+        f = database.readline()
+        for i in f:
+            if 'OK' in f:
+                countOK+=1
 
+        for i in f:
+            if 'KO' in f:
+                countKO+=1
+
+    print(countOK, countKO)
 # main
 def main():
     with open(db,'r') as database:
         f = database.readlines()
         return f
 
+'''
 writeToDb(getResult(), getDate())
 
 f = main()
 for i in f:
     print(i)
-
+'''
+count()
 
 
 
