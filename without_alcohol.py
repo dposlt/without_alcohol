@@ -11,6 +11,17 @@ from datetime import date
 from colorama import init, Fore, Style
 init()
 
+# db method it's not possible using with statement becouse with automatic close file
+def getDB(wr):
+    db = 'testdata.txt'
+    if wr == True:
+        database = open(db,'a+')
+        return database
+    else:
+        database = open(db, 'r')
+        return database
+
+
 
 # get restult
 def getResult():
@@ -49,11 +60,11 @@ def getDate():
 
     return today
 
-db = 'testdata.txt'
+
 def writeToDb(result, today):
-    # needed small database for previous days
-    with open(db,'a+') as database:
-        database.writelines(f'\n{today} > {result}{Style.RESET_ALL}')
+    database = getDB(True)
+    database.writelines(f'\n{today} > {result}{Style.RESET_ALL}')
+    database.close()
 
 #count
 def count():
@@ -72,19 +83,26 @@ def count():
     print(countOK, countKO)
 # main
 def main():
-    with open(db,'r') as database:
-        f = database.readlines()
-        return f
+    writeToDb(getResult(), getDate())
+    database = getDB(False)
+    f = database.readlines()
+    for i in f:
+        print(i)
 
-'''
-writeToDb(getResult(), getDate())
+    database.close()
 
-f = main()
-for i in f:
-    print(i)
+
+
+
+
+
+main()
+
+
+
 '''
 count()
-
+'''
 
 
 
