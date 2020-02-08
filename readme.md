@@ -2,7 +2,7 @@
 
 Description: count of days without alcohol 
 
-## procejct done
+## project done
 100 %
 ## Getting Started
 
