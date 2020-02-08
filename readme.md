@@ -1,7 +1,9 @@
 # Project Without alcohol
 
-Description: count of days without alcohol
+Description: count of days without alcohol 
 
+## procejct done
+100 %
 ## Getting Started
 
 python withou_alcohol.py
@@ -33,8 +35,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Future
 ```
-- [ ] count all days without alcohol
-- [ ] count all days with alcohol
+- [x] count all days without alcohol
+- [x] count all days with alcohol
 - [x] change color for ok and ko days
 - [x] add parametr -h for help
 - [x] add db to method

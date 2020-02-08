@@ -70,17 +70,19 @@ def writeToDb(result, today):
 def count():
     countOK = 0
     countKO = 0
-    with open(db,'r') as database:
-        f = database.readline()
-        for i in f:
-            if 'OK' in f:
-                countOK+=1
+    database = getDB(False)
+    for db in database.readlines():
 
-        for i in f:
-            if 'KO' in f:
-                countKO+=1
+        if 'OK' in db:
+            countOK +=1
+        elif 'KO' in db:
+            countKO +=1
 
-    print(countOK, countKO)
+    database.close()
+    return countOK, countKO
+
+
+
 # main
 def main():
     writeToDb(getResult(), getDate())
@@ -90,19 +92,14 @@ def main():
         print(i)
 
     database.close()
-
-
-
+    ok, ko = count()
+    print(f'Total days without_alkohol is {Fore.CYAN} {ok} {Style.RESET_ALL}and total days with alcohol is {Fore.RED}{ko}')
 
 
 
 main()
 
 
-
-'''
-count()
-'''
 
 
 
